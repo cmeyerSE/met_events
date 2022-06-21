@@ -7,7 +7,7 @@ require_relative "met_events/scraper"
 
 require 'pry'
 require 'nokogiri'
-
+require 'open-uri'
 
 module MetEvents
   class Error < StandardError; end

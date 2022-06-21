@@ -9,6 +9,7 @@ class MetEvents::Day
     end
 
     def self.all
+        MetEvents::Scraper.scrape_days if @@all.empty?
         @@all
     end
 

@@ -1,6 +1,13 @@
 class MetEvents::CLI
+    @@muted="\e[1;31m"
+    @@grn="\e[1;32m"
+    @@blue="\e[1;34m"
+    @@mag="\e[1;35m"
+    @@cyn="\e[1;36m"
+    @@white="\e[0m"
+
     def call
-        puts "\nWelcome to The Metropolitan Museum of Art!\n"
+        puts "\n#{@@grn}Welcome to The Metropolitan Museum of Art!#{@@white}\n"
         get_days
         list_days
         get_user_day
@@ -8,13 +15,11 @@ class MetEvents::CLI
 
     def get_days
         #to be scraped for days where events are listed
-        MetEvents::Day.new("july 12")
-        MetEvents::Day.new("july 23")
         @days = MetEvents::Day.all
     end
 
     def list_days
-        puts 'Choose a day to see event'
+        puts "#{@@mag}Choose a day to see event#{@@white}"
         #list days
         @days.each.with_index(1) do |day, index|
             puts "#{index}. #{day.name}"
@@ -32,6 +37,6 @@ class MetEvents::CLI
 
     def show_events_for(chosen_day)
         day = @days[chosen_day.to_i - 1]
-        puts "Events for #{day}"
+        puts "Events for #{day.name}"
     end
 end
