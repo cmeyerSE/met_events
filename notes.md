@@ -11,3 +11,6 @@ Classes
 - Event
 - CLI(command line interface)
 - Scraper
+
+- get real days
+- allow to select another day

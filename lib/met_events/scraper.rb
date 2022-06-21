@@ -1,0 +1,3 @@
+class MetEvents::scraper
+
+end
